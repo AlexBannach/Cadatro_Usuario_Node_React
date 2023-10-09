@@ -3,6 +3,8 @@ import axios from "axios";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import { FaTrash, FaEdit } from "react-icons/fa";
+import { formatDate } from "../utils/Utils";
+
 
 
 const Table = styled.table`
@@ -83,7 +85,7 @@ const Grid = ({ users, setUsers, setOnEdit  }) => {
                         <Td width="20%" onlyWeb>
                             {item.fone}
                         </Td>
-                        <Td width="20%">{item.data_nascimento}</Td>
+                        <Td width="10%">{formatDate(item.data_nascimento)}</Td>
                         <Td alignCenter width="5%">
                             <FaEdit onClick={() => handleEdit(item)} />
                         </Td>
